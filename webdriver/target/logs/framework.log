@@ -1,0 +1,34 @@
+2019-12-10 09:08:04,639 INFO  [main] Created (default) Chrome driver.
+2019-12-10 09:08:17,678 INFO  [main] Home page opened
+2019-12-10 09:08:20,723 INFO  [main] Focus away.
+2019-12-10 09:08:20,724 INFO  [main] Inserted Belarusian State University, Minsk, Belarus to 'Going to' field
+2019-12-10 09:08:21,402 INFO  [main] Focus away.
+2019-12-10 09:08:21,402 INFO  [main] Inserted 01/01/2020 to 'Check in' field
+2019-12-10 09:08:21,903 INFO  [main] Focus away.
+2019-12-10 09:08:21,904 INFO  [main] Inserted 01/02/2020 to 'Check out' field
+2019-12-10 09:08:29,214 INFO  [main] Search button was clicked
+2019-12-10 09:08:30,035 INFO  [main] Closed driver.
+2019-12-10 09:08:33,436 INFO  [main] Created (default) Chrome driver.
+2019-12-10 09:08:47,046 INFO  [main] Home page opened
+2019-12-10 09:08:48,095 INFO  [main] Search button was clicked
+2019-12-10 09:08:48,899 INFO  [main] Closed driver.
+2019-12-10 09:08:51,935 INFO  [main] Created (default) Chrome driver.
+2019-12-10 09:08:58,892 INFO  [main] Home page opened
+2019-12-10 09:09:00,955 INFO  [main] Focus away.
+2019-12-10 09:09:00,955 INFO  [main] Inserted Belarusian State University, Minsk, Belarus to 'Going to' field
+2019-12-10 09:09:01,566 INFO  [main] Focus away.
+2019-12-10 09:09:01,566 INFO  [main] Inserted 20/12/2010 to 'Check in' field
+2019-12-10 09:09:01,982 INFO  [main] Focus away.
+2019-12-10 09:09:01,983 INFO  [main] Inserted 10/20/2010 to 'Check out' field
+2019-12-10 09:09:02,458 INFO  [main] Search button was clicked
+2019-12-10 09:09:03,218 INFO  [main] Closed driver.
+2019-12-10 09:09:06,071 INFO  [main] Created (default) Chrome driver.
+2019-12-10 09:09:15,979 INFO  [main] Home page opened
+2019-12-10 09:09:19,057 INFO  [main] Focus away.
+2019-12-10 09:09:19,057 INFO  [main] Inserted Belarusian State University, Minsk, Belarus to 'Going to' field
+2019-12-10 09:09:19,556 INFO  [main] Focus away.
+2019-12-10 09:09:19,556 INFO  [main] Enabled 'Add flight' checkbox.
+2019-12-10 09:09:21,587 INFO  [main] Focus away.
+2019-12-10 09:09:21,587 INFO  [main] Filled 'Flying from' field.
+2019-12-10 09:09:35,992 INFO  [main] Search button was clicked
+2019-12-10 09:09:36,859 INFO  [main] Closed driver.
