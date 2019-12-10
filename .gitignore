@@ -1,18 +1,10 @@
-# Java files
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
-target/
-test-output/
-
-# Eclipse
-.classpath
-.project
-.settings/
-
-# Idea
-.idea/
+# DB, Log
+*.db 
+*.log
 *.iml
+
+# Bin
+bin/ 
+target/
+.idea/
+out/
