@@ -3,7 +3,7 @@
 <suite name="Smoke" verbose="1" >
     <test name="HotelSearchResult"   >
         <classes>
-            <class name="edu.krsvch.webdriver.test.HotelSearchParamsPageTests" />
+            <class name="edu.krsvch.webdriver.test.HomePageTests" />
         </classes>
     </test>
 </suite>

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public abstract class AbstractPage {
     protected final Logger LOGGER = LogManager.getRootLogger();
     protected final int WAIT_TIMEOUT_SECONDS = 10;

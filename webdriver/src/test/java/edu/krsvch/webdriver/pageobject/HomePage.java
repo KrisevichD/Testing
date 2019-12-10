@@ -25,6 +25,13 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"hotel-flight-origin-hp-hotel\"]")
     private WebElement flyingFromInput;
 
+    @FindBy(xpath = "//*[@id=\"header-account-menu\"]")
+    private WebElement accountButton;
+
+    @FindBy(xpath = "//*[@id=\"account-signin\"]")
+    private WebElement signInButton;
+
+
 
     public HomePage() {
     }
@@ -79,6 +86,13 @@ public class HomePage extends AbstractPage {
         focusAway();
         LOGGER.info("Filled 'Flying from' field.");
         return this;
+    }
+
+    public AccountPage openSignInForm(){
+        accountButton.click();
+        signInButton.click();
+        LOGGER.info("Account form opened");
+        return new AccountPage();
     }
 }
 

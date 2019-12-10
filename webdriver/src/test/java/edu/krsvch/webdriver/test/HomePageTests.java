@@ -1,8 +1,10 @@
 package edu.krsvch.webdriver.test;
 
+import edu.krsvch.webdriver.model.Account;
 import edu.krsvch.webdriver.model.ReservationData;
 import edu.krsvch.webdriver.pageobject.HomePage;
 import edu.krsvch.webdriver.pageobject.ResultPage;
+import edu.krsvch.webdriver.service.AccountCreator;
 import edu.krsvch.webdriver.service.ReservationDataCreator;
 import edu.krsvch.webdriver.service.TestDataReader;
 import org.testng.Assert;
@@ -13,6 +15,7 @@ public class HomePageTests extends CommonConditions{
     private static final String TEST_DATA_CASE2_ERROR_MESSAGE1_EXPECTED = "test-data.case2.error-message1-expected";
     private static final String TEST_DATA_CASE2_ERROR_MESSAGE2_EXPECTED = "test-data.case2.error-message2-expected";
     private static final String TEST_DATA_CASE4_ERROR_MESSAGE_EXPECTED = "test-data.case4.error-message-expected";
+    private static final String TEST_DATA_CASE5_ACCOUNT_NAME="test-data.case5.account-name";
 
     @Test(description = "case 1: Search hotel without filling in parameters")
     public void searchHotelsWithEmptyParams() {
@@ -53,5 +56,16 @@ public class HomePageTests extends CommonConditions{
                 .fillFlyingFromInput(data.getGoingTo())
                 .search();
         Assert.assertEquals(resultPage.getErrorMessage3(), TestDataReader.getTestData(TEST_DATA_CASE4_ERROR_MESSAGE_EXPECTED));
+    }
+
+    @Test(description = "case 5: One can sign in Denis's account")
+    public void oneCanSignInWithCorrectData(){
+        HomePage page = new HomePage().openPage();
+        Account data = AccountCreator.withCorrectData();
+        ResultPage resultPage = page.openSignInForm()
+                .fillAccountData(data)
+                .signInButtonClick();
+        Assert.assertEquals(resultPage.getAccountName(), TestDataReader.getTestData(TEST_DATA_CASE5_ACCOUNT_NAME));
+        resultPage.signOut();
     }
 }
