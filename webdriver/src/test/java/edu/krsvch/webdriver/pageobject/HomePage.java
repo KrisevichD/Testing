@@ -1,8 +1,10 @@
 package edu.krsvch.webdriver.pageobject;
 
 import edu.krsvch.webdriver.model.ReservationData;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends AbstractPage {
     private final static String HOME_PAGE_URL = "https://www.travelocity.com/";
@@ -31,7 +33,14 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"account-signin\"]")
     private WebElement signInButton;
 
+    @FindBy(xpath = "//*[@id=\"userGreetingName\"]")
+    private WebElement accountName;
 
+    @FindBy(xpath = "//*[@id=\"account-signout\"]")
+    private WebElement signOutButton;
+
+    @FindBy(xpath = "//*[@id=\"account-signout\"]")
+    private WebElement languageButton;
 
     public HomePage() {
     }
@@ -93,6 +102,39 @@ public class HomePage extends AbstractPage {
         signInButton.click();
         LOGGER.info("Account form opened");
         return new AccountPage();
+    }
+
+    public String getAccountName(){
+        waitUntil(ExpectedConditions.presenceOfElementLocated(By.linkText("Denis")));
+        LOGGER.info("Account name - " + accountName.getText());
+        return accountName.getText();
+    }
+
+    public void signOut(){
+        LOGGER.info("Sign Out from account");
+        accountButton.click();
+        signOutButton.click();
+    }
+
+
+
+    public String getCheckInDate(){
+        return checkInInput.getAttribute("value");
+    }
+
+    public String getCheckOutDate(){
+        return checkOutInput.getAttribute("value");
+    }
+
+    public HomePage changeLanguage(){
+        languageButton.click();
+        LOGGER.info("Language was changed");
+        return this;
+    }
+
+    public String getLanguageId(){
+        String url = this.getUrl();
+        return url.substring(url.length()-4);
     }
 }
 

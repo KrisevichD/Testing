@@ -31,6 +31,9 @@ public abstract class AbstractPage {
         body.click();
         LOGGER.info("Focus away.");
     }
+    public String getUrl() {
+        return driver.getCurrentUrl();
+    }
 
     protected void waitUntil(ExpectedCondition<WebElement> expectedCondition) {
         LOGGER.info("Start wait until " + expectedCondition + "...");

@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ResultPage extends AbstractPage {
-    private static final String USER_NAME_ID = "userGreetingName";
 
     @FindBy(xpath = "//*[@id=\"hotel-destination-hp-hotel\"]")
     private WebElement goingToInput;
@@ -36,15 +35,18 @@ public class ResultPage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"acol-errorDiv\"]/p/strong")
     private WebElement errorMessage3;
 
-    @FindBy(xpath = "//*[@id=\"userGreetingName\"]")
-    private WebElement accountName;
+    @FindBy(xpath = "//*[@class=\"uitk-link uitk-link-layout-default uitk-type-300\"]//*[Text()=\"Sign out\"]")
+    private WebElement accountButtonPopUp;
+    @FindBy(xpath = "//*[@class=\"uitk-link uitk-link-layout-default uitk-type-300\"]//*[Text()=\"List of Favorites\"]")
+    private WebElement listOfFavoritesButton;
+    @FindBy(xpath = "//*[@id=\"uitk-tabs-container\"]/ul/li[2]/a")
+    private WebElement recentSearchesButton;
 
-    @FindBy(xpath = "//*[@id=\"header-account-menu-signed-in\"]")
-    private WebElement accountButton;
+    @FindBy(xpath = "//*[@class=\"uitk-favorite-switch\"]")
+    private WebElement addToFavoriteButton;
 
-    @FindBy(xpath = "//*[@id=\"account-signout\"]")
-    private WebElement signOutButton;
-
+    @FindBy(xpath = "//*[@class=\"header-logo uitk-cell all-cell-shrink all-y-padding-two all-r-padding-two\"]")
+    private WebElement logoButton;
 
     @Override
     public ResultPage openPage() {
@@ -69,16 +71,34 @@ public class ResultPage extends AbstractPage {
         return goingToData.getText();
     }
 
-    public String getAccountName(){
-        waitUntil(ExpectedConditions.presenceOfElementLocated(By.linkText("Denis")));
-        return accountName.getText();
+    public LastSearchesPage openLastSearches(){
+        accountButtonPopUp.click();
+        listOfFavoritesButton.click();
+        recentSearchesButton.click();
+        LOGGER.info("Last searches was opened");
+        return new LastSearchesPage();
     }
 
-    public ResultPage signOut(){
-        accountButton.click();
-        signOutButton.click();
+    public LastSearchesPage openSavedItems(){
+        accountButtonPopUp.click();
+        listOfFavoritesButton.click();
+        LOGGER.info("Saved items was opened");
+        return new LastSearchesPage();
+    }
+
+    public ResultPage logoButtonClick(){
+        logoButton.click();
+        LOGGER.info("Logo button was clicked");
         return this;
     }
+
+    public ResultPage saveToFavorites(){
+        addToFavoriteButton.click();
+        LOGGER.info("Hotel was saved to favorites");
+        return this;
+    }
+
+
 
 
 

@@ -17,6 +17,7 @@ public class AccountPage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"gss-signin-submit\"]")
     private WebElement signInButton;
 
+
     public AccountPage() {
     }
 
@@ -37,9 +38,9 @@ public class AccountPage extends AbstractPage {
         return this;
     }
 
-    public ResultPage signInButtonClick(){
+    public HomePage signInButtonClick(){
         signInButton.click();
         LOGGER.info("Sign in button clicked");
-        return new ResultPage();
+        return new HomePage();
     }
 }
