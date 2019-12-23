@@ -25,7 +25,7 @@ public class HomePageTests extends CommonConditions{
         ResultPage resultPage = page.search();
         Assert.assertEquals(resultPage.getErrorMessage(), TestDataReader.getTestData(TEST_DATA_CASE1_ERROR_MESSAGE_EXPECTED));
     }
-/*
+
     @Test(description = "case 2: Search hotel with impossible and past date in parameters")
     public void searchHotelsWithIncorrectDate() {
         HomePage page = new HomePage().openPage();
@@ -35,9 +35,8 @@ public class HomePageTests extends CommonConditions{
                 .fillCheckOutInput(data)
                 .search();
         Assert.assertEquals(resultPage.getErrorMessage1(), TestDataReader.getTestData(TEST_DATA_CASE2_ERROR_MESSAGE1_EXPECTED));
-        Assert.assertEquals(resultPage.getErrorMessage2(), TestDataReader.getTestData(TEST_DATA_CASE2_ERROR_MESSAGE2_EXPECTED));
     }
-*/
+
     @Test(description = "case 3: Search hotel with correct place and date")
     public void searchHotelsWithCorrectPlaceAndDate() {
         HomePage page = new HomePage().openPage();
@@ -114,12 +113,13 @@ public class HomePageTests extends CommonConditions{
                 .fillCheckOutInput(data);
         Assert.assertNotEquals(page.getCheckOutDate(), page.getCheckInDate());
     }
-/*
+
+
     @Test(description = "case 9: Change language to spanish")
     public void changeLanguageToSpanish() {
         HomePage page = new HomePage().openPage();
         page.changeLanguage();
-        Assert.assertNotEquals(page.getLanguageId(), TEST_DATA_CASE9_LANGUAGE_ID);
+        Assert.assertEquals(page.getLanguageId(), TEST_DATA_CASE9_LANGUAGE_ID);
     }
 
     @Test(description = "case 10: Test that logo button translates to the home page ")
@@ -130,7 +130,9 @@ public class HomePageTests extends CommonConditions{
         ResultPage resultPage = page.fillGoingToInput(data)
                 .search()
                 .logoButtonClick();
-        Assert.assertNotEquals(resultPage.getUrl(), homeUrl);
+        Assert.assertEquals(resultPage.getUrl(), homeUrl);
     }
-*/
+
+
+
 }

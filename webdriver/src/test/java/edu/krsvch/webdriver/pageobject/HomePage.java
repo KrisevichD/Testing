@@ -39,7 +39,7 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"account-signout\"]")
     private WebElement signOutButton;
 
-    @FindBy(xpath = "//*[@id=\"account-signout\"]")
+    @FindBy(xpath = "//*[@id=\"header-language-2058\"]")
     private WebElement languageButton;
 
     public HomePage() {
@@ -86,7 +86,7 @@ public class HomePage extends AbstractPage {
     public HomePage enableFlightCheckbox() {
         flightCheckbox.click();
         focusAway();
-        LOGGER.info("Enabled 'Add flight' checkbox.");
+        LOGGER.info("Enabled 'Add flight' checkbox. " + flightCheckbox.isSelected());
         return new HomePage();
     }
 
