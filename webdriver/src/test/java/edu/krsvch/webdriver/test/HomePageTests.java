@@ -47,62 +47,62 @@ public class HomePageTests extends CommonConditions{
                 .search();
         Assert.assertEquals(resultPage.getGoingToData(), data.getGoingTo());
     }
+    /*
+        @Test(description = "case 4: Search hotel with same 'flying from' and 'going to' data")
+        public void searchHotelsWithSameFlyingFromAndGoingToData() {
+            HomePage page = new HomePage().openPage();
+            ReservationData data = ReservationDataCreator.withCorrectPlaceAndDate();
+            ResultPage resultPage = page.fillGoingToInput(data)
+                    .enableFlightCheckbox()
+                    .fillFlyingFromInput(data.getGoingTo())
+                    .search();
+            Assert.assertEquals(resultPage.getErrorMessage3(), TestDataReader.getTestData(TEST_DATA_CASE4_ERROR_MESSAGE_EXPECTED));
+        }
 
-    @Test(description = "case 4: Search hotel with same 'flying from' and 'going to' data")
-    public void searchHotelsWithSameFlyingFromAndGoingToData() {
-        HomePage page = new HomePage().openPage();
-        ReservationData data = ReservationDataCreator.withCorrectPlaceAndDate();
-        ResultPage resultPage = page.fillGoingToInput(data)
-                .enableFlightCheckbox()
-                .fillFlyingFromInput(data.getGoingTo())
-                .search();
-        Assert.assertEquals(resultPage.getErrorMessage3(), TestDataReader.getTestData(TEST_DATA_CASE4_ERROR_MESSAGE_EXPECTED));
-    }
-/*
-    @Test(description = "case 5: You can sign in account with correct email and password")
-    public void signInWithCorrectEmailAndPassword(){
-        HomePage page = new HomePage().openPage();
-        Account data = AccountCreator.withCorrectData();
-        HomePage homePage = page.openSignInForm()
-                .fillAccountData(data)
-                .signInButtonClick();
-        Assert.assertEquals(homePage.getAccountName(), TestDataReader.getTestData(TEST_DATA_CASE5_ACCOUNT_NAME));
-        homePage.signOut();
-    }
+        @Test(description = "case 5: You can sign in account with correct email and password")
+        public void signInWithCorrectEmailAndPassword(){
+            HomePage page = new HomePage().openPage();
+            Account data = AccountCreator.withCorrectData();
+            HomePage homePage = page.openSignInForm()
+                    .fillAccountData(data)
+                    .signInButtonClick();
+            Assert.assertEquals(homePage.getAccountName(), TestDataReader.getTestData(TEST_DATA_CASE5_ACCOUNT_NAME));
+            homePage.signOut();
+        }
 
-    @Test(description = "case 6: Test that after searching you have data of your last search in your account")
-    public void testTheAvailabilityOfTheLeastSearchData(){
-        HomePage page = new HomePage().openPage();
-        Account accountData = AccountCreator.withCorrectData();
-        ReservationData reservationData = ReservationDataCreator.withCorrectPlaceAndDate();
-        LastSearchesPage lastSearchesPage = page.openSignInForm()
-                .fillAccountData(accountData)
-                .signInButtonClick()
-                .fillGoingToInput(reservationData)
-                .search()
-                .openLastSearches();
-        Assert.assertEquals(lastSearchesPage.getLatestSearchPlace(), reservationData.getGoingTo());
-        lastSearchesPage.removeLatestSearchData();
-        lastSearchesPage.signOut();
-    }
+        @Test(description = "case 6: Test that after searching you have data of your last search in your account")
+        public void testTheAvailabilityOfTheLeastSearchData(){
+            HomePage page = new HomePage().openPage();
+            Account accountData = AccountCreator.withCorrectData();
+            ReservationData reservationData = ReservationDataCreator.withCorrectPlaceAndDate();
+            LastSearchesPage lastSearchesPage = page.openSignInForm()
+                    .fillAccountData(accountData)
+                    .signInButtonClick()
+                    .fillGoingToInput(reservationData)
+                    .search()
+                    .openLastSearches();
+            Assert.assertEquals(lastSearchesPage.getLatestSearchPlace(), reservationData.getGoingTo());
+            lastSearchesPage.removeLatestSearchData();
+            lastSearchesPage.signOut();
+        }
 
-    @Test(description = "case 7: Test that after adding hotel to favorites you can find it in your account")
-    public void testTheAvailabilityOfTheSavedHotels(){
-        HomePage page = new HomePage().openPage();
-        Account accountData = AccountCreator.withCorrectData();
-        ReservationData reservationData = ReservationDataCreator.withCorrectPlaceAndDate();
-        LastSearchesPage lastSearchesPage = page.openSignInForm()
-                .fillAccountData(accountData)
-                .signInButtonClick()
-                .fillGoingToInput(reservationData)
-                .search()
-                .saveToFavorites()
-                .openSavedItems();
-        Assert.assertEquals(lastSearchesPage.getLatestSavedPlace(), reservationData.getGoingTo());
-        lastSearchesPage.removeSavedItem();
-        lastSearchesPage.signOut();
-    }
-*/
+        @Test(description = "case 7: Test that after adding hotel to favorites you can find it in your account")
+        public void testTheAvailabilityOfTheSavedHotels(){
+            HomePage page = new HomePage().openPage();
+            Account accountData = AccountCreator.withCorrectData();
+            ReservationData reservationData = ReservationDataCreator.withCorrectPlaceAndDate();
+            LastSearchesPage lastSearchesPage = page.openSignInForm()
+                    .fillAccountData(accountData)
+                    .signInButtonClick()
+                    .fillGoingToInput(reservationData)
+                    .search()
+                    .saveToFavorites()
+                    .openSavedItems();
+            Assert.assertEquals(lastSearchesPage.getLatestSavedPlace(), reservationData.getGoingTo());
+            lastSearchesPage.removeSavedItem();
+            lastSearchesPage.signOut();
+        }
+    */
     @Test(description = "case 8: Input the same 'Check in' and 'Check Out' date")
     public void inputSameCheckInAndCheckOutDate() {
         HomePage page = new HomePage().openPage();
