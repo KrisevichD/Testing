@@ -25,7 +25,7 @@ public class HomePageTests extends CommonConditions{
         ResultPage resultPage = page.search();
         Assert.assertEquals(resultPage.getErrorMessage(), TestDataReader.getTestData(TEST_DATA_CASE1_ERROR_MESSAGE_EXPECTED));
     }
-
+/*
     @Test(description = "case 2: Search hotel with impossible and past date in parameters")
     public void searchHotelsWithIncorrectDate() {
         HomePage page = new HomePage().openPage();
@@ -37,7 +37,7 @@ public class HomePageTests extends CommonConditions{
         Assert.assertEquals(resultPage.getErrorMessage1(), TestDataReader.getTestData(TEST_DATA_CASE2_ERROR_MESSAGE1_EXPECTED));
         Assert.assertEquals(resultPage.getErrorMessage2(), TestDataReader.getTestData(TEST_DATA_CASE2_ERROR_MESSAGE2_EXPECTED));
     }
-
+*/
     @Test(description = "case 3: Search hotel with correct place and date")
     public void searchHotelsWithCorrectPlaceAndDate() {
         HomePage page = new HomePage().openPage();
@@ -59,7 +59,7 @@ public class HomePageTests extends CommonConditions{
                 .search();
         Assert.assertEquals(resultPage.getErrorMessage3(), TestDataReader.getTestData(TEST_DATA_CASE4_ERROR_MESSAGE_EXPECTED));
     }
-
+/*
     @Test(description = "case 5: You can sign in account with correct email and password")
     public void signInWithCorrectEmailAndPassword(){
         HomePage page = new HomePage().openPage();
@@ -103,7 +103,7 @@ public class HomePageTests extends CommonConditions{
         lastSearchesPage.removeSavedItem();
         lastSearchesPage.signOut();
     }
-
+*/
     @Test(description = "case 8: Input the same 'Check in' and 'Check Out' date")
     public void inputSameCheckInAndCheckOutDate() {
         HomePage page = new HomePage().openPage();
@@ -114,7 +114,7 @@ public class HomePageTests extends CommonConditions{
                 .fillCheckOutInput(data);
         Assert.assertNotEquals(page.getCheckOutDate(), page.getCheckInDate());
     }
-
+/*
     @Test(description = "case 9: Change language to spanish")
     public void changeLanguageToSpanish() {
         HomePage page = new HomePage().openPage();
@@ -132,4 +132,5 @@ public class HomePageTests extends CommonConditions{
                 .logoButtonClick();
         Assert.assertNotEquals(resultPage.getUrl(), homeUrl);
     }
+*/
 }
