@@ -21,7 +21,7 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"gcw-hotel-form-hp-hotel\"]/div[7]/label/button")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//*[@id=\"gcw-hotel-form-hp-hotel\"]/div[4]/label[1]")
+    @FindBy(xpath = "//*[@id=\"hotel-add-flight-checkbox-hp-hotel\"]")
     private WebElement flightCheckbox;
 
     @FindBy(xpath = "//*[@id=\"hotel-flight-origin-hp-hotel\"]")
@@ -86,6 +86,7 @@ public class HomePage extends AbstractPage {
     public HomePage enableFlightCheckbox() {
         focusAway();
         waitUntil(ExpectedConditions.elementToBeClickable(flightCheckbox));
+        flightCheckbox.clear();
         flightCheckbox.click();
         focusAway();
         LOGGER.info("Enabled 'Add flight' checkbox. " + flightCheckbox.isSelected());
