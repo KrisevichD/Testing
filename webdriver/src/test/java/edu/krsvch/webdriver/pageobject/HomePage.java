@@ -21,7 +21,7 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"gcw-hotel-form-hp-hotel\"]/div[7]/label/button")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//*[@id=\"hotel-add-flight-checkbox-hp-hotel\"]")
+    @FindBy(xpath = "//*[@id=\"gcw-hotel-form-hp-hotel\"]/div[4]/label[1]")
     private WebElement flightCheckbox;
 
     @FindBy(xpath = "//*[@id=\"hotel-flight-origin-hp-hotel\"]")
