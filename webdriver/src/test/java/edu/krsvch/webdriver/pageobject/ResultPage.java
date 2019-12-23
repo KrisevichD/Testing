@@ -45,7 +45,7 @@ public class ResultPage extends AbstractPage {
     @FindBy(xpath = "//*[@class=\"uitk-favorite-switch\"]")
     private WebElement addToFavoriteButton;
 
-    @FindBy(xpath = "//*[@class=\"header-logo uitk-cell all-cell-shrink all-y-padding-two all-r-padding-two\"]")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div/header/div/div/a")
     private WebElement logoButton;
 
     @Override
@@ -64,6 +64,7 @@ public class ResultPage extends AbstractPage {
         return errorMessage2.getText();
     }
     public String getErrorMessage3(){
+        waitUntil(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"acol-errorDiv\"]/p/strong")));
         return errorMessage3.getText();
     }
 
