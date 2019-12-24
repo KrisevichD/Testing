@@ -85,7 +85,6 @@ public class HomePage extends AbstractPage {
 
     public HomePage enableFlightCheckbox() {
         focusAway();
-        if (!flightCheckbox.isSelected())
         flightCheckbox.click();
         focusAway();
         LOGGER.info("Enabled 'Add flight' checkbox. " + flightCheckbox.isSelected());

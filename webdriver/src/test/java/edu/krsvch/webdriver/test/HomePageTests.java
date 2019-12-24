@@ -47,7 +47,7 @@ public class HomePageTests extends CommonConditions{
                 .search();
         Assert.assertEquals(resultPage.getGoingToData(), data.getGoingTo());
     }
-    /*
+
         @Test(description = "case 4: Search hotel with same 'flying from' and 'going to' data")
         public void searchHotelsWithSameFlyingFromAndGoingToData() {
             HomePage page = new HomePage().openPage();
@@ -58,7 +58,7 @@ public class HomePageTests extends CommonConditions{
                     .search();
             Assert.assertEquals(resultPage.getErrorMessage3(), TestDataReader.getTestData(TEST_DATA_CASE4_ERROR_MESSAGE_EXPECTED));
         }
-
+    /*
         @Test(description = "case 5: You can sign in account with correct email and password")
         public void signInWithCorrectEmailAndPassword(){
             HomePage page = new HomePage().openPage();
